@@ -1,0 +1,33 @@
+.header{
+    grid-area: header;
+    background-color:brown;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo{
+    display: block;
+    width: 102px;
+    height: 62px;
+    margin: 15px;
+}
+
+.header__logo img{
+    height: 60px;
+    width: 60px;
+}
+
+.header__nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px;
+}
+
+.header__link{
+    display: block;
+    margin-right: 20px;
+    color:white;
+}
