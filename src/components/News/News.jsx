@@ -1,12 +1,12 @@
 import React from 'react';
-import s from './Music.module.css';
+import s from './News.module.css';
 
-const Music = ()=> {
+const News = ()=> {
     return(
         <div className={s.content}>
-            Музыка
+            Новости
         </div>
     );
 }
 
-export default Music;
+export default News;
