@@ -4,6 +4,23 @@
     padding: 5px;
     margin: 5px;
     color:white;
-
 }
 
+.container{
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+}
+
+.dialogs{
+    padding: 10px;
+}
+
+.dialogs .active{
+    color: gold;
+}
+
+.messages{
+    padding: 10px;
+}
+
+.messege{}
