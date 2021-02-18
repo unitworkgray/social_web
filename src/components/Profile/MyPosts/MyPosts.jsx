@@ -6,9 +6,12 @@ import s from './MyPosts.module.css';
 const MyPosts = () =>{
     return(
         <div className={s.my_posts}>
-            My posts
+            <h3>My posts</h3>
             <div>
-                <textarea name="" id=""></textarea>
+                <div className={s.container_textarea}>
+                    <textarea name="" id=""></textarea>
+                </div>
+                
                 <button>add</button>
             </div>
             <Post />
