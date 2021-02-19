@@ -4,6 +4,14 @@ import s from './MyPosts.module.css';
 
 
 const MyPosts = () =>{
+
+    let PostData = [
+        {id: 1, post: 'Привет, как дела?', likesCount: 14},
+        {id: 2, post: 'Это мой первый пост', likesCount: 42}
+    ]
+
+    let Posts = PostData.map(p => <Post message={p.post} likesCount={p.likesCount} />)
+
     return(
         <div className={s.my_posts}>
             <h3>My posts</h3>
@@ -14,8 +22,7 @@ const MyPosts = () =>{
                 
                 <button>add</button>
             </div>
-            <Post />
-            <Post />
+            {Posts}
             <Post />
             <Post />
             <Post />

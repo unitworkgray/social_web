@@ -11,6 +11,10 @@
     grid-template-columns: 2fr 10fr;
 }
 
+.dialog a{
+    color: white;
+}
+
 .dialogs{
     padding: 10px;
 }
