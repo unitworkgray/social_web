@@ -9,7 +9,7 @@ import Music from './components/Music/Music';
 import News from './components/News/News';
 import Footer from './components/Footer/Footer';
 
-const App = ()=>{
+const App = (props)=>{
 	return(
 		<BrowserRouter>
 			<div className='bg'>
@@ -17,10 +17,15 @@ const App = ()=>{
 					<Header />
 					<Nav />
 					<div className='app__content_wrapper'>
-						<Route exact path='/profile' component={Profile} />
-						<Route exact path='/dialog' component={Dialogs} />
-						<Route exact path='/music' component={Music} />
-						<Route exact path='/news' component={News} />
+						<Route exact path='/profile' 
+							render={ ()=> <Profile 
+								PostData={props.state.profilePage.PostData} />} />
+						<Route exact path='/dialog' 
+							render={ ()=> <Dialogs 
+								DialogData={props.state.dialogsPage.DialogData} 
+								MessageData={props.state.dialogsPage.MessageData} />} />
+						<Route exact path='/music' render={ ()=> <Music />} />
+						<Route exact path='/news' render={ ()=> <News />} />
 					</div>
 					<Footer />	
 				</div>
