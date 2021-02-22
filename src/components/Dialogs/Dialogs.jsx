@@ -15,9 +15,10 @@ const DialogItem = (props)=> {
 
 const Message = (props)=> {
     return(
-        <div className={s.message}>{props.message}</div>
+        <span className={s.message}>{props.message}</span>
     )
 }
+
 
 const Dialogs = (props)=> {
 
@@ -34,7 +35,22 @@ const Dialogs = (props)=> {
                    
                 </div>
                 <div className={s.messages}>
-                    {MessageElement}
+                    <div className={s.messages__container}>
+                        <div className={s.message__userName}>
+                        <div className={s.icon__user}>
+                            <img  src='https://static.dw.com/image/42966898_303.jpg' alt=""/>
+                            <div className={s.name_surname}>User <hr/> Userov</div>
+                        </div>
+                            <div className={s.message__text}>{MessageElement}</div>
+                        </div>
+                        <div className={s.message__otherUserName}>
+                            <div className={s.message__text}>{MessageElement}</div>
+                            <div className={s.icon__user}>
+                                <img src='https://aif-s3.aif.ru/images/018/249/b7a5d57b005bc19f6eeae875b9ddc5e4.jpg' alt=""/>
+                                <div className={s.name_surname}>Степа <hr/> Османов</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
