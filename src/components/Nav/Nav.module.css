@@ -4,6 +4,7 @@
     padding: 15px;
     margin: 15px;
     width: 300px;
+    min-height: 800px;
 }
 
 .nav__link{

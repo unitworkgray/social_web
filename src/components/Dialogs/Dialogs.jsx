@@ -26,6 +26,13 @@ const Dialogs = (props)=> {
 
     let MessageElement = props.MessageData.map(message => <Message message={message.message} />);
 
+    let newMessageElement = React.createRef();
+    
+    let addMessage = ()=> {
+        let text = newMessageElement.current.value;
+        alert(text);
+    }
+
     return(
         <div className={s.content}>
             <div className={s.container}>
@@ -35,6 +42,10 @@ const Dialogs = (props)=> {
                    
                 </div>
                 <div className={s.messages}>
+                    <div className={s.myMessage}>
+                        <textarea ref={newMessageElement} placeholder='Введите свое сообщение'></textarea>
+                        <button onClick={addMessage}>Отправить сообщение</button>
+                    </div>
                     <div className={s.messages__container}>
                         <div className={s.message__userName}>
                         <div className={s.icon__user}>

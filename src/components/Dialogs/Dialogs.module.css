@@ -25,8 +25,34 @@
 
 .messages{
     padding: 5px;
+    
     border: 1px solid #813d3d;
     background-color:black;
+}
+
+.myMessage{
+    max-width: 700px;
+    min-height: 130px;
+    background-color: #272727f6;
+    margin-bottom: 5px;
+}
+
+.myMessage textarea{
+    width: 690px;
+    height: 80px;
+    margin: 5px;
+    background-color: black;
+    color: white;
+    padding: 5px;
+}
+
+.myMessage button{
+    margin-left: 550px;
+    height: 30px;
+    padding: 1px;
+    background-color: brown;
+    color: white;
+    border-radius: 10px;
 }
 
 .messages__container{
