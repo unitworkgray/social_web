@@ -10,8 +10,10 @@ const MyPosts = (props) =>{
     let newPostElement = React.createRef();
 
     let addPost = ()=>{
-        let text = newPostElement.current.value
-        alert(text);
+        debugger;
+        let text = newPostElement.current.value;
+        props.addPost(text);
+        newPostElement.current.value = '';
     }
 
     return(
@@ -25,10 +27,6 @@ const MyPosts = (props) =>{
                 <button onClick={addPost}>add</button>
             </div>
             {Posts}
-            <Post />
-            <Post />
-            <Post />
-            <Post />
         </div>
     )
 }
