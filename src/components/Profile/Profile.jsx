@@ -11,7 +11,7 @@ const Profile = (props)=> {
                     newPostText={props.profilePage.newPostText}
                     dispatch={props.dispatch} />
         </div>
-    );
+    )
 }
 
 export default Profile;

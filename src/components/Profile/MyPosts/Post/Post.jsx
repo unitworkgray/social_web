@@ -6,7 +6,7 @@ const Post = (props) => {
         <div className={s.item}>
             <img src="https://static.dw.com/image/42966898_303.jpg" alt=""/>{props.message}
             <div>
-                <span>like :{props.likesCount}</span>
+                <span>like</span>{props.likesCount}
             </div>
         </div>
     )
