@@ -1,0 +1,59 @@
+.nav{
+    grid-area: n;
+    border: 1px solid brown;
+    padding: 15px;
+    margin: 15px;
+    width: 300px;
+    min-height: 800px;
+}
+
+.nav__link{
+    margin-bottom: 100px ;
+
+}
+
+.navLink__item a {
+    color: white;
+    line-height: 25px;
+}
+    
+a.active{
+    color: gold;
+}
+
+.messages__container{
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: black;
+    border: 1px solid #813d3d;
+}
+
+.s.friend__panel{
+    display: block;
+}
+
+.icon__user{
+    width: 70px;
+    color: white;
+    background-color: #272727f6;
+    margin: 5px;
+
+}
+
+.icon__user img{
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+.zero__friend{
+    width: 70px;
+    color: white;
+    background-color: black;
+    margin: 5px;
+}
