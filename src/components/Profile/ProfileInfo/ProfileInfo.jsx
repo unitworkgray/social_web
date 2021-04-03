@@ -1,17 +1,21 @@
 import React from 'react';
 import s from './ProfileInfo.module.css';
+import Preloader from "../../common/Preloader/Preloader";
 
-const ProfileInfo = ()=> {
-    return(
-        <div className={s.container}>
-            <div className={s.ava}>Ava</div>
-            <div className={s.desqr}>
-                <div className={s.userName}>Имя Фамилия</div>
-                <hr/>
-                <div className={s.userInfo}>
-                    Возраст: 25
-                    Город: Воронеж
-                </div>
+const ProfileInfo = (props) => {
+    if (!props.profile) {
+        return <Preloader />
+    }
+
+    return (
+        <div>
+            <div>
+                <img
+                    src='https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?auto=compress&cs=tinysrgb&h=350'/>
+            </div>
+            <div className={s.descriptionBlock}>
+                <img src={props.profile.photos.large} />
+                ava + description
             </div>
         </div>
     )
