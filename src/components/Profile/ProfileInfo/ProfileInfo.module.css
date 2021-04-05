@@ -1,0 +1,39 @@
+.wrapper_container{
+    border: #813d3d solid 1px;
+    padding: 5px;
+    margin: 5px;
+    background-color: #262626;
+}
+
+.center_wrapper{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5px;
+}
+
+.info_wrapper{
+    width: 875px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrapper_desqription{
+    width: 570px;
+    border: #813d3d solid 1px;
+    padding: 5px;
+}
+
+.title_wrapper{
+    border-bottom: #813d3d solid 1px;
+    margin-bottom: 5px;
+}
+
+.title{
+    font-size: 20px;
+    color: red;
+    padding-bottom: 3px;
+}
+
+.status_title{
+    padding-bottom: 5px;
+}
