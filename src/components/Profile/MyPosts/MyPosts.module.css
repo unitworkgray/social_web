@@ -1,18 +1,64 @@
-.my_posts{
-    padding: 10px;
+*{
+    color: white;
 }
 
-.container_textarea{
-    margin: 10px 0 10px 0;
+.my_posts_container{
+    display: flex;
+    justify-content: center;
+    border: #813d3d solid 1px;
+    padding: 5px;
+    margin: 5px;
+    background-color: #262626;
 }
 
-button{
-    display: block;
-    margin-bottom: 10px;
+.my_posts_center_wrapper{
+    width: 875px;
+    justify-content: center;
+    padding-bottom: 5px;
 }
 
-h3{
-    font-size: 24px;
-    color:red;
-    padding-bottom: 10px;
+.my_posts_title{
+    border: #813d3d solid 1px;
+    font-size: 20px;
+    color: red;
+    padding: 5px;
+    margin: 5px 0;
+    width: 875px;
+}
+
+.my_posts_former{
+    margin: 0 auto;
+    border: #813d3d solid 1px;
+    width: 875px;
+    height: 95px;
+}
+.my_posts_container_textarea{
+    margin: 0 auto;
+}
+
+.my_posts_container_textarea textarea {
+    padding: 5px;
+    margin: 5px;
+    width: 863px;
+    min-height: 40px;
+    background-color: black;
+}
+
+.my_posts_container_button{
+    float: right;
+}
+
+button {
+    background-color: red;
+    color: white;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;
+}
+
+.posts{
+    margin: 5px 0;
+    padding: 5px;
+    border: #813d3d solid 1px;
+    background-color: black;
 }

@@ -4,9 +4,6 @@ import styles from './users.module.css';
 import {NavLink} from "react-router-dom";
 
 
-
-
-
 let Users = (props)=> {
 
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -33,7 +30,10 @@ let Users = (props)=> {
                             </NavLink>
                         </div>
                         <div>
-                            {u.followed ? <button onClick={()=>{props.unfollow(u.id)}}>Follow</button> : <button onClick={()=>{props.follow(u.id)}}>Unfollow</button>}
+                            {u.followed
+                                ? <button onClick={()=>{props.unfollow(u.id)}}>Unfollow</button>
+
+                                : <button onClick={()=>{props.follow(u.id)}}>follow</button>}
                         </div>
                     </span>
                     <span>
