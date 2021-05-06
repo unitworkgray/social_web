@@ -1,0 +1,16 @@
+h1 {
+    border: #813d3d solid 1px;
+    font-size: 20px;
+    color: red;
+    padding: 5px;
+    margin: 5px 0;
+    width: 875px;
+}
+
+input{
+    border: #813d3d solid 1px;
+    font-size: 18px;
+    color: red;
+    padding: 5px;
+    margin: 5px 0;
+}

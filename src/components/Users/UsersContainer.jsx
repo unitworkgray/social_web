@@ -8,6 +8,9 @@ import {
 } from '../../redux/users_reducer';
 import Users from './Users';
 import Preloader from "../common/Preloader/Preloader";
+import {Redirect} from "react-router-dom";
+import {withAuthRedirect} from "../../hoc/withAuthRedirect";
+import {compose} from "redux";
 
 class UsersContainer extends React.Component{
 
@@ -22,6 +25,7 @@ class UsersContainer extends React.Component{
     }
 
     render() {
+        if (!this.props.isAuth) return <Redirect to = '/login'/>
         return <>
             {this.props.isFetching ? <Preloader/> : null }
             <Users totalUsersCount = {this.props.totalUsersCount}
@@ -45,35 +49,18 @@ let mapStateToProps = (state) => {
         totalUsersCount: state.usersPage.totalUsersCount,
         currentPage: state.usersPage.currentPage,
         isFetching: state.usersPage.isFetching,
+        isAuth: state.auth.isAuth
         /*followingInProgress: state.usersPage.isFetching,*/
     }
 };
 
- /*let mapDispatchToProps =(dispatch) => {
-    return{
-        follow: (userId) => {
-            dispatch(follow(userId));
-        },
-        unfollow: (userId) => {
-            dispatch(unfollow(userId));
-        },
-        setUsers: (users) => {
-            dispatch(setUsers(users));
-        },
-        setCurrentPage: (pageNumber) => {
-            dispatch(setCurrentPage(pageNumber));
-        },
-        setTotalUsersCount: (totalCount) => {
-            dispatch(setTotalUsersCount(totalCount));
-        },
-        toggleIsFetching: (isFetching) => {
-            dispatch(toggleIsFetching(isFetching));
-        }
+let mapStateToPropsForRedirect = (state) => ({
+    isAuth: state.auth.isAuth
+});
 
-    }
-}; */
-
-export default connect(mapStateToProps,
-    {follow, unfollow,
-        setCurrentPage,
-        getUsers}) (UsersContainer);
+export default compose(
+    connect(mapStateToProps,
+        {follow, unfollow,
+            setCurrentPage,
+            getUsers})
+)(UsersContainer)
