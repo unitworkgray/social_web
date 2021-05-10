@@ -24,25 +24,35 @@ const Dialogs = (props)=> {
     return(
         <div className={s.content}>
             <div className={s.container}>
-                <div className={s.dialogs}>
+                {/*<div className={s.dialogs}>
                     {DialogElements}
-                </div>
+                </div>*/}
                 <div className={s.messages}>
-                    <div className={s.myMessage}>
-                        <textarea 
+                    <div>
+                        {MessageElement}
+                    </div>
+
+                </div>
+
+            </div>
+            <AddMessageForm  />
+        </div>
+    );
+}
+
+export const AddMessageForm = (props) => {
+    return(
+        <form>
+            <div className={s.myMessage}>
+                        <textarea
                             value={newMessageBody}
                             onChange={onNewMessageChange}
                             placeholder='Введите свое сообщение'>
                         </textarea>
-                        <button onClick={onSendMessageClick}>Отправить сообщение</button>
-                    </div>
-                    <div>
-                        {MessageElement}
-                    </div>
-                </div>
+                <button onClick={onSendMessageClick}>Отправить сообщение</button>
             </div>
-        </div>
-    );
+        </form>
+    )
 }
 
 export default Dialogs;
