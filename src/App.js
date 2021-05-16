@@ -4,7 +4,7 @@ import Nav from './components/Nav/Nav';
 import Music from './components/Music/Music';
 import News from './components/News/News';
 import Footer from './components/Footer/Footer';
-import {Route} from 'react-router-dom';
+import {Route, withRouter} from 'react-router-dom';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import UsersContainer from './components/Users/UsersContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
@@ -13,6 +13,7 @@ import LoginPage from "./components/Login/Login";
 import {connect} from "react-redux";
 import {initializeApp} from "./redux/app_reducer";
 import Preloader from "./components/common/Preloader/Preloader";
+import {compose} from "redux";
 
 
 
@@ -54,4 +55,6 @@ const mapStateToProps = (state) => ({
 	initialized: state.app.initialized
 })
 
-export default connect (mapStateToProps, {initializeApp}) (App);
+export default compose(
+	withRouter,
+	connect (mapStateToProps, {initializeApp}))(App);

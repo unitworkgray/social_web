@@ -2,9 +2,10 @@ import React from 'react';
 import s from './ProfileInfo.module.css';
 import Preloader from "../../common/Preloader/Preloader";
 import ProfileStatus from './ProfileStatus';
+import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 
-const ProfileInfo = (props) => {
-    if (!props.profile) {
+const ProfileInfo = ({profile, status, updateStatus}) => {
+    if (!profile) {
         return <Preloader />
     }
 
@@ -17,25 +18,25 @@ const ProfileInfo = (props) => {
                 </div>*/}
                 <div className={s.center_wrapper}>
                     <div className={s.info_wrapper}>
-                        <img src={props.profile.photos.large} />
+                        <img src={profile.photos.large} />
                         <div className={s.wrapper_desqription}>
                             <div className={s.title_wrapper}>
-                                <div className={s.title}>{props.profile.fullName}</div>
-                                <div className={s.status_title}><ProfileStatus status={props.status} updateStatus={props.updateStatus}/></div>
-                                <div className={s.status_title}>{props.profile.aboutMe}</div>
-                                <div className={s.status_title}>Работаю:{props.profile.lookingForAJob}</div>
-                                <div className={s.status_title}>Поиск работы: {props.profile.lookingForAJobDescription}</div>
+                                <div className={s.title}>{profile.fullName}</div>
+                                <div className={s.status_title}><ProfileStatusWithHooks status={status} updateStatus={updateStatus}/></div>
+                                <div className={s.status_title}>{profile.aboutMe}</div>
+                                <div className={s.status_title}>Работаю:{profile.lookingForAJob}</div>
+                                <div className={s.status_title}>Поиск работы: {profile.lookingForAJobDescription}</div>
                             <div/>
                             </div>
                             <div>Контакты:
-                                <div className={s.status_title}>facebook: {props.profile.contacts.facebook}</div>
-                                <div className={s.status_title}>website: {props.profile.contacts.website}</div>
-                                <div className={s.status_title}>vk: {props.profile.contacts.vk}</div>
-                                <div className={s.status_title}>twitter: {props.profile.contacts.twitter}</div>
-                                <div className={s.status_title}>instagram: {props.profile.contacts.instagram}</div>
-                                <div className={s.status_title}>youtube: {props.profile.contacts.youtube}</div>
-                                <div className={s.status_title}>github: {props.profile.contacts.github}</div>
-                                <div className={s.status_title}>mainLink: {props.profile.contacts.mainLink}</div>
+                                <div className={s.status_title}>facebook: {profile.contacts.facebook}</div>
+                                <div className={s.status_title}>website: {profile.contacts.website}</div>
+                                <div className={s.status_title}>vk: {profile.contacts.vk}</div>
+                                <div className={s.status_title}>twitter: {profile.contacts.twitter}</div>
+                                <div className={s.status_title}>instagram: {profile.contacts.instagram}</div>
+                                <div className={s.status_title}>youtube: {profile.contacts.youtube}</div>
+                                <div className={s.status_title}>github: {profile.contacts.github}</div>
+                                <div className={s.status_title}>mainLink: {profile.contacts.mainLink}</div>
                             </div>
                         </div>
                     </div>

@@ -71,38 +71,43 @@ export const toggleIsFetching = (isFetching) =>({type: TOGGLE_IS_FETCHING, isFet
 
 export const requestUsers = (page, pageSize) => {
 
-    return (dispatch) => {
+    return async (dispatch) => {
 
         /*dispatch(toggleIsFetching(true));*/
         dispatch(setCurrentPage(page));
 
-        usersAPI.requestUsers(page, pageSize).then(data => {
-            /*dispatch(toggleIsFetching(false));*/
+        let data = await usersAPI.requestUsers(page, pageSize);
+            //dispatch(toggleIsFetching(false));
+            dispatch (setUsers(data.items));
+            dispatch(setUsersTotalCount(data.totalCount));
+
+        /*usersAPI.requestUsers(page, pageSize).then(data => {
+            //dispatch(toggleIsFetching(false));
             dispatch(setUsers(data.items));
             dispatch(setUsersTotalCount(data.totalCount));
-        });
+        });*/
     }
-}
-export const follow = (userId) => {
-    return (dispatch) => {
 
-        usersAPI.follow(userId)
-            .then(response => {
-                if (response.data.resultCode == 0) {
-                    dispatch(followSuccess(userId));
-                }
-            });
+}
+
+const followUnfollowFlow = async (dispatch, userId, apiMethod, actionCreator) => {
+    //despatch(toggleFollowingProgress(false, userId));
+    let response = await apiMethod(userId);
+
+    if (response.data.resultCode == 0) {
+        dispatch(actionCreator(userId));
+    }
+    //despatch(toggleFollowingProgress(false, userId));
+}
+
+export const follow = (userId) => {
+    return async (dispatch) => {
+        followUnfollowFlow(dispatch, userId, usersAPI.follow.bind(usersAPI), followSuccess);
     }
 }
 export const unfollow = (userId) => {
-    return (dispatch) => {
-
-        usersAPI.unfollow(userId)
-            .then(response => {
-                if (response.data.resultCode == 0) {
-                    dispatch(unfollowSuccess(userId));
-                }
-            });
+    return async (dispatch) => {
+        followUnfollowFlow(dispatch, userId, usersAPI.unfollow.bind(usersAPI), unfollowSuccess);
     }
 }
 
